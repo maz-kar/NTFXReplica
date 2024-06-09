@@ -56,5 +56,7 @@ class MainTabBarViewController: UITabBarController {
  Next is the headerView with a big image and 2 buttons of Play and Download
  for the image we need to have a new UIView where we will initialize our UIImageView
  
+ Add gradient to the image from 0/clear on top to be sysBackgroundColor in the bottom
+ 
  
  */
