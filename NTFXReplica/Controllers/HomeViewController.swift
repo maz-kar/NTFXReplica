@@ -21,5 +21,10 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(homeFeedTable)
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        homeFeedTable.frame = view.bounds
+    }
 
 }
