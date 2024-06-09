@@ -17,6 +17,7 @@
 		6B4D10E42C15932B00B24A43 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4D10E32C15932B00B24A43 /* SearchViewController.swift */; };
 		6B4D10E62C15935A00B24A43 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4D10E52C15935A00B24A43 /* DownloadsViewController.swift */; };
 		6B4D10ED2C15B26000B24A43 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4D10EC2C15B26000B24A43 /* CollectionViewTableViewCell.swift */; };
+		6B4D10EF2C15FEBF00B24A43 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B4D10EE2C15FEBF00B24A43 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6B4D10E32C15932B00B24A43 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6B4D10E52C15935A00B24A43 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		6B4D10EC2C15B26000B24A43 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		6B4D10EE2C15FEBF00B24A43 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		6B4D10BE2C158E3E00B24A43 = {
 			isa = PBXGroup;
 			children = (
+				6B4D10EE2C15FEBF00B24A43 /* README.md */,
 				6B4D10C92C158E3E00B24A43 /* NTFXReplica */,
 				6B4D10C82C158E3E00B24A43 /* Products */,
 			);
@@ -185,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4D10EF2C15FEBF00B24A43 /* README.md in Resources */,
 				6B4D10D42C158E3F00B24A43 /* Assets.xcassets in Resources */,
 				6B4D10D72C158E3F00B24A43 /* Base in Resources */,
 			);
