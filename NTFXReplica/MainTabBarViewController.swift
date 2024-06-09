@@ -35,3 +35,23 @@ class MainTabBarViewController: UITabBarController {
 
 }
 
+/*
+ We have a MainTabBarVC
+ 4 NC will be attached/setViewControllers
+
+ One of them is HomeVC
+ To HomeVC we want to add tableView
+ We create a TableView
+ Then add that TableView to our view (HomeVC) addSubview
+ That table needs to have cells/rows.
+ In order to modify our tableView, we need to register to delegate and dataSource and extend our HomeVC, in order to use their methods such:
+ heightForRow - heightForHeader - numberOfSections - numberOfRowsInSection - cellForRowAt
+ Last of should return a cell object/class
+ Therefore we need that our table to register to a class which is the class of our cells, similar to above
+ 
+ Then we need a new TableViewCell class for the above last two points
+ 
+ Then as we want in each Row/Cell separated collectionViews, we need to create a new one in CollectionViewTableViewCell
+ 
+ 
+ */
