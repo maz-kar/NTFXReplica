@@ -8,13 +8,26 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }()
     
+    private func configureNavBar() {
+        var image = UIImage(named: "netflixLogo")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        
+        let rightButtonItemFirst = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil)
+        let rightButtonItemSecond = UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+        
+        rightButtonItemFirst.tintColor = .label
+        rightButtonItemSecond.tintColor = .label
+        
+        navigationItem.rightBarButtonItems = [rightButtonItemFirst, rightButtonItemSecond]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +37,17 @@ class HomeViewController: UIViewController {
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
         
-        homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
+        configureNavBar()
+        
+        homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
-
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
