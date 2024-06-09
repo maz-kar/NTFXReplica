@@ -53,5 +53,8 @@ class MainTabBarViewController: UITabBarController {
  
  Then as we want in each Row/Cell separated collectionViews, we need to create a new one in CollectionViewTableViewCell
  
+ Next is the headerView with a big image and 2 buttons of Play and Download
+ for the image we need to have a new UIView where we will initialize our UIImageView
+ 
  
  */
