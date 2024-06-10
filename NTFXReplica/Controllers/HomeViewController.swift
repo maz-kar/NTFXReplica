@@ -75,6 +75,19 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func getTopRatedMovies() {
+        APICaller.shared.getTopRatedMovies { results in
+            switch results {
+            case .success(let topRatedMovies):
+                print(topRatedMovies)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -91,6 +104,7 @@ class HomeViewController: UIViewController {
         getTrendingTvs()
         getPopularMovies()
         getUpcomingMovies()
+        getTopRatedMovies()
     }
     
     override func viewDidLayoutSubviews() {
