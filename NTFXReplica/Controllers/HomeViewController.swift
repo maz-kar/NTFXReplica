@@ -53,6 +53,28 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func getPopularMovies() {
+        APICaller.shared.getPopularMovies { results in
+            switch results {
+            case .success(let popularMovies):
+                print(popularMovies)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func getUpcomingMovies() {
+        APICaller.shared.getUpcomingMovies { results in
+            switch results {
+            case .success(let upcomingMovies):
+                print(upcomingMovies)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -67,6 +89,8 @@ class HomeViewController: UIViewController {
         
         getTrendingMovies()
         getTrendingTvs()
+        getPopularMovies()
+        getUpcomingMovies()
     }
     
     override func viewDidLayoutSubviews() {

@@ -8,8 +8,9 @@
 import Foundation
 
 struct Constants {
-    static let API_KEY = "697d439ac993538da4e3e60b54e762cd"
+    static let API_KEY = "257007683961dbd0c49e765549682fc2"
     static let baseURL = "https://api.themoviedb.org"
+    // https://api.themoviedb.org/3/movie/upcoming?api_key=257007683961dbd0c49e765549682fc2&language=en-US&page=1
 }
 
 class APICaller {
@@ -37,6 +38,36 @@ class APICaller {
             
             do {
                 let results = try JSONDecoder().decode(TrendingTvsResponse.self, from: data)
+                completion(.success(results.results))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
+    
+    func getPopularMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/popular?api_key=\(Constants.API_KEY)") else { return }
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
+                completion(.success(results.results))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
+    
+    func getUpcomingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/upcoming?api_key=\(Constants.API_KEY)") else { return }
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let results = try JSONDecoder().decode(TrendingMoviesResponse.self, from: data)
                 completion(.success(results.results))
             } catch {
                 completion(.failure(error))
