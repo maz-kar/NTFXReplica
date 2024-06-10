@@ -21,6 +21,7 @@
 		6B4D10F32C1609E500B24A43 /* HomeHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4D10F22C1609E500B24A43 /* HomeHeaderUIView.swift */; };
 		6B7FBDE12C172D8200AC66DF /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FBDE02C172D8200AC66DF /* Title.swift */; };
 		6B7FBDE32C1733D000AC66DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FBDE22C1733D000AC66DF /* Extensions.swift */; };
+		6B7FBDE92C1742DD00AC66DF /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FBDE82C1742DD00AC66DF /* TitleCollectionViewCell.swift */; };
 		6BBA491C2C16F6490047D386 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA491B2C16F6490047D386 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		6B4D10F22C1609E500B24A43 /* HomeHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderUIView.swift; sourceTree = "<group>"; };
 		6B7FBDE02C172D8200AC66DF /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Title.swift; path = NTFXReplica/Title.swift; sourceTree = SOURCE_ROOT; };
 		6B7FBDE22C1733D000AC66DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6B7FBDE82C1742DD00AC66DF /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		6BBA491B2C16F6490047D386 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			children = (
 				6B4D10EC2C15B26000B24A43 /* CollectionViewTableViewCell.swift */,
 				6B4D10F22C1609E500B24A43 /* HomeHeaderUIView.swift */,
+				6B7FBDE82C1742DD00AC66DF /* TitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4D10E42C15932B00B24A43 /* SearchViewController.swift in Sources */,
+				6B7FBDE92C1742DD00AC66DF /* TitleCollectionViewCell.swift in Sources */,
 				6B4D10CF2C158E3E00B24A43 /* MainTabBarViewController.swift in Sources */,
 				6B4D10ED2C15B26000B24A43 /* CollectionViewTableViewCell.swift in Sources */,
 				6BBA491C2C16F6490047D386 /* APICaller.swift in Sources */,
