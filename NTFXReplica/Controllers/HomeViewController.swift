@@ -31,6 +31,12 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItems = [rightButtonItemFirst, rightButtonItemSecond]
     }
     
+    private func getTrendingMovies() {
+        APICaller.shared.getTrendingMovies { _ in
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -43,6 +49,7 @@ class HomeViewController: UIViewController {
         
         homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         
+        getTrendingMovies()
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,8 +90,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .label
         header.textLabel?.text = sectionTitles[section]
-        
     }
-    
     
 }
