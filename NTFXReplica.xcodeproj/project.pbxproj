@@ -22,8 +22,8 @@
 		6B7FBDE12C172D8200AC66DF /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FBDE02C172D8200AC66DF /* Title.swift */; };
 		6B7FBDE32C1733D000AC66DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FBDE22C1733D000AC66DF /* Extensions.swift */; };
 		6B7FBDE92C1742DD00AC66DF /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FBDE82C1742DD00AC66DF /* TitleCollectionViewCell.swift */; };
-		6B7FBDEC2C17470A00AC66DF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6B7FBDEB2C17470A00AC66DF /* SDWebImage */; };
-		6B7FBDEE2C17470A00AC66DF /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6B7FBDED2C17470A00AC66DF /* SDWebImageMapKit */; };
+		6B7FBDF12C17482900AC66DF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6B7FBDF02C17482900AC66DF /* SDWebImage */; };
+		6B7FBDF32C17482900AC66DF /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6B7FBDF22C17482900AC66DF /* SDWebImageMapKit */; };
 		6BBA491C2C16F6490047D386 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA491B2C16F6490047D386 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7FBDEE2C17470A00AC66DF /* SDWebImageMapKit in Frameworks */,
-				6B7FBDEC2C17470A00AC66DF /* SDWebImage in Frameworks */,
+				6B7FBDF32C17482900AC66DF /* SDWebImageMapKit in Frameworks */,
+				6B7FBDF12C17482900AC66DF /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +166,8 @@
 			);
 			name = NTFXReplica;
 			packageProductDependencies = (
-				6B7FBDEB2C17470A00AC66DF /* SDWebImage */,
-				6B7FBDED2C17470A00AC66DF /* SDWebImageMapKit */,
+				6B7FBDF02C17482900AC66DF /* SDWebImage */,
+				6B7FBDF22C17482900AC66DF /* SDWebImageMapKit */,
 			);
 			productName = NTFXReplica;
 			productReference = 6B4D10C72C158E3E00B24A43 /* NTFXReplica.app */;
@@ -198,7 +198,7 @@
 			);
 			mainGroup = 6B4D10BE2C158E3E00B24A43;
 			packageReferences = (
-				6B7FBDEA2C17470A00AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				6B7FBDEF2C17482900AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 6B4D10C82C158E3E00B24A43 /* Products */;
 			projectDirPath = "";
@@ -456,7 +456,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6B7FBDEA2C17470A00AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		6B7FBDEF2C17482900AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
@@ -467,14 +467,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6B7FBDEB2C17470A00AC66DF /* SDWebImage */ = {
+		6B7FBDF02C17482900AC66DF /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B7FBDEA2C17470A00AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 6B7FBDEF2C17482900AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		6B7FBDED2C17470A00AC66DF /* SDWebImageMapKit */ = {
+		6B7FBDF22C17482900AC66DF /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B7FBDEA2C17470A00AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 6B7FBDEF2C17482900AC66DF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
