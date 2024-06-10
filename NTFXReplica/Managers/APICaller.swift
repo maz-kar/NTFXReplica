@@ -24,7 +24,7 @@ class APICaller {
                 let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 completion(.success(results.results))
             } catch {
-                completion(.failure(APIError.failedToGetData))
+                completion(.failure(APIError.failedToGetData)) //We will pass the result to whoever will call this func
             }
         }
         task.resume()
