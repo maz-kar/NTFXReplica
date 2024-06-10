@@ -42,6 +42,17 @@ class HomeViewController: UIViewController {
         }
     }
     
+    private func getTrendingTvs() {
+        APICaller.shared.getTrendingTvs { results in
+            switch results {
+            case .success(let tvs):
+                print(tvs)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -55,6 +66,7 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         
         getTrendingMovies()
+        getTrendingTvs()
     }
     
     override func viewDidLayoutSubviews() {
