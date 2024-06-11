@@ -10,6 +10,7 @@ import UIKit
 class CollectionViewTableViewCell: UITableViewCell {
 
     static let identifier = "CollectionViewTableViewCell"
+    private var titles: [Title] = [Title]()
     
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -39,6 +40,10 @@ class CollectionViewTableViewCell: UITableViewCell {
         fatalError()
     }
     
+    public func configure(with titles: [Title]) {
+        self.titles = titles
+    }
+    
 }
 
 extension CollectionViewTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -47,7 +52,8 @@ extension CollectionViewTableViewCell: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(with: "")
         cell.backgroundColor = .green
         return cell
     }
