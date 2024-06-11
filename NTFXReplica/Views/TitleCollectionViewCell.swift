@@ -12,7 +12,7 @@ class TitleCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "TitleCollectionViewCell"
     
-    private var posterImageView: UIImageView = {
+    private let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         return imageView
