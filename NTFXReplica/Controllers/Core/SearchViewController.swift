@@ -16,6 +16,13 @@ class SearchViewController: UIViewController {
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier) //TitleTableViewCell is a generic TVC
         return table
     }()
+    
+    private let searchController: UISearchController = {
+       let controller = UISearchController(searchResultsController: SearchResultsViewController())
+        controller.searchBar.placeholder = "Search for a Movie or a TV show"
+        controller.searchBar.searchBarStyle = .minimal
+        return controller
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +32,8 @@ class SearchViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
         view.addSubview(searchTable)
-        
+        navigationItem.searchController = searchController
+    
         searchTable.delegate = self
         searchTable.dataSource = self
         

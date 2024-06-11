@@ -27,6 +27,7 @@
 		6BBA491C2C16F6490047D386 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBA491B2C16F6490047D386 /* APICaller.swift */; };
 		6BDB1CB42C1857BE00E9609D /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDB1CB32C1857BE00E9609D /* TitleTableViewCell.swift */; };
 		6BDB1CB62C185D5B00E9609D /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDB1CB52C185D5B00E9609D /* TitleViewModel.swift */; };
+		6BDB1CB82C186DDC00E9609D /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDB1CB72C186DDC00E9609D /* SearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		6BBA491B2C16F6490047D386 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		6BDB1CB32C1857BE00E9609D /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		6BDB1CB52C185D5B00E9609D /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleViewModel.swift; path = NTFXReplica/Views/TitleViewModel.swift; sourceTree = SOURCE_ROOT; };
+		6BDB1CB72C186DDC00E9609D /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,6 @@
 				6B4D10DE2C1592F900B24A43 /* Controllers */,
 				6B4D10CA2C158E3E00B24A43 /* AppDelegate.swift */,
 				6B4D10CC2C158E3E00B24A43 /* SceneDelegate.swift */,
-				6B4D10CE2C158E3E00B24A43 /* MainTabBarViewController.swift */,
 				6B4D10D32C158E3F00B24A43 /* Assets.xcassets */,
 				6B4D10D52C158E3F00B24A43 /* LaunchScreen.storyboard */,
 				6B4D10D82C158E3F00B24A43 /* Info.plist */,
@@ -104,10 +105,8 @@
 		6B4D10DE2C1592F900B24A43 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6B4D10DF2C15931500B24A43 /* HomeViewController.swift */,
-				6B4D10E12C15932300B24A43 /* ComingSoonViewController.swift */,
-				6B4D10E32C15932B00B24A43 /* SearchViewController.swift */,
-				6B4D10E52C15935A00B24A43 /* DownloadsViewController.swift */,
+				6BDB1CBA2C186DFD00E9609D /* Core */,
+				6BDB1CB92C186DF400E9609D /* General */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +152,26 @@
 				6BBA491B2C16F6490047D386 /* APICaller.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		6BDB1CB92C186DF400E9609D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				6BDB1CB72C186DDC00E9609D /* SearchResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		6BDB1CBA2C186DFD00E9609D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6B4D10DF2C15931500B24A43 /* HomeViewController.swift */,
+				6B4D10E12C15932300B24A43 /* ComingSoonViewController.swift */,
+				6B4D10E32C15932B00B24A43 /* SearchViewController.swift */,
+				6B4D10E52C15935A00B24A43 /* DownloadsViewController.swift */,
+				6B4D10CE2C158E3E00B24A43 /* MainTabBarViewController.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +261,7 @@
 				6B4D10CB2C158E3E00B24A43 /* AppDelegate.swift in Sources */,
 				6B4D10E62C15935A00B24A43 /* DownloadsViewController.swift in Sources */,
 				6B4D10CD2C158E3E00B24A43 /* SceneDelegate.swift in Sources */,
+				6BDB1CB82C186DDC00E9609D /* SearchResultsViewController.swift in Sources */,
 				6B7FBDE32C1733D000AC66DF /* Extensions.swift in Sources */,
 				6B4D10E22C15932300B24A43 /* ComingSoonViewController.swift in Sources */,
 				6B4D10E02C15931500B24A43 /* HomeViewController.swift in Sources */,
