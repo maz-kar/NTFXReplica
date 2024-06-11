@@ -31,61 +31,6 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItems = [rightButtonItemFirst, rightButtonItemSecond]
     }
     
-    private func getTrendingMovies() {
-        APICaller.shared.getTrendingMovies { results in
-            switch results {
-            case .success(let movies):
-                print(movies)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getTrendingTvs() {
-        APICaller.shared.getTrendingTvs { results in
-            switch results {
-            case .success(let tvs):
-                print(tvs)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getPopularMovies() {
-        APICaller.shared.getPopularMovies { results in
-            switch results {
-            case .success(let popularMovies):
-                print(popularMovies)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getUpcomingMovies() {
-        APICaller.shared.getUpcomingMovies { results in
-            switch results {
-            case .success(let upcomingMovies):
-                print(upcomingMovies)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getTopRatedMovies() {
-        APICaller.shared.getTopRatedMovies { results in
-            switch results {
-            case .success(let topRatedMovies):
-                print(topRatedMovies)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -98,11 +43,6 @@ class HomeViewController: UIViewController {
         
         homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         
-        getTrendingMovies()
-        getTrendingTvs()
-        getPopularMovies()
-        getUpcomingMovies()
-        getTopRatedMovies()
     }
     
     override func viewDidLayoutSubviews() {
