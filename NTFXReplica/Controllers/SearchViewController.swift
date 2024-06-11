@@ -9,6 +9,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    private var titles: [Title] = [Title]()
+    
     private let searchTable: UITableView = {
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier) //TitleTableViewCell is a generic TVC
@@ -26,25 +28,47 @@ class SearchViewController: UIViewController {
         
         searchTable.delegate = self
         searchTable.dataSource = self
+        
+        fetchSearchMovies()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         searchTable.frame = view.bounds
     }
+    
+    private func fetchSearchMovies() {
+        APICaller.shared.getSearchMovies { [weak self] result in
+            switch result {
+            case .success(let titles):
+                self?.titles = titles
+                DispatchQueue.main.async {
+                    self?.searchTable.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return titles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
+        let title = titles[indexPath.row]
+        let model = TitleViewModel(posterURL: title.poster_path ?? "", titleName: title.original_name ?? title.original_title ?? "Unknown")
+        cell.configure(with: model)
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
     
 }
