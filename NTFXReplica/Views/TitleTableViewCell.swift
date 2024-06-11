@@ -27,7 +27,10 @@ class TitleTableViewCell: UITableViewCell {
     
     private let playTitleButton: UIButton = {
         let button = UIButton()
+        let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
+        button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .label
         return button
     }()
     
@@ -58,16 +61,14 @@ class TitleTableViewCell: UITableViewCell {
             titlesLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ]
         
-//        let playTitleButtonConstraints = [
-//            playTitleButton.leadingAnchor.constraint(equalTo: titlesLabel.trailingAnchor, constant: 20),
-//            playTitleButton.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-//            playTitleButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
-//            playTitleButton.widthAnchor.constraint(equalToConstant: 100)
-//        ]
+        let playTitleButtonConstraints = [
+            playTitleButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            playTitleButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ]
         
         NSLayoutConstraint.activate(posterImageViewConstraints)
         NSLayoutConstraint.activate(titlesLabelConstraints)
-        //NSLayoutConstraint.activate(playTitleButtonConstraints)
+        NSLayoutConstraint.activate(playTitleButtonConstraints)
     }
     
     public func configure(with model: TitleViewModel) {
