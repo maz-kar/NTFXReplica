@@ -33,6 +33,7 @@ class SearchViewController: UIViewController {
         
         view.addSubview(searchTable)
         navigationItem.searchController = searchController
+        navigationController?.navigationBar.tintColor = .label
     
         searchTable.delegate = self
         searchTable.dataSource = self
