@@ -9,6 +9,14 @@ import UIKit
 
 class HomeHeaderUIView: UIView {
     
+    private let headerImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "headerImage")
+        return imageView
+    }()
+    
     private let playButton: UIButton = {
         let button = UIButton()
         button.setTitle("Play", for: .normal)
@@ -27,14 +35,6 @@ class HomeHeaderUIView: UIView {
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
-    }()
-    
-    private let headerImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "headerImage")
-        return imageView
     }()
     
     private func addGradient() {
@@ -71,8 +71,6 @@ class HomeHeaderUIView: UIView {
         addSubview(playButton)
         addSubview(downloadButton)
         applyConstraints()
-        
-        
     }
     
     required init?(coder: NSCoder) {
@@ -82,7 +80,5 @@ class HomeHeaderUIView: UIView {
     override func layoutSubviews() {
         headerImageView.frame = bounds
     }
-    
-    
     
 }

@@ -11,28 +11,35 @@ class SearchViewController: UIViewController {
     
     private var titles: [Title] = [Title]()
     
+    //TODO: add title section here as a func like configureNavigationTitle
+    
+    //TODO4: How to have a searchBarController
+    private let searchBarController: UISearchController = {
+        let controller = UISearchController(searchResultsController: SearchResultsViewController())
+        controller.searchBar.placeholder = "Search for a Movie or a TV show"
+        controller.searchBar.searchBarStyle = .minimal
+        return controller
+    }()
+    
     private let searchTable: UITableView = {
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier) //TitleTableViewCell is a generic TVC
         return table
     }()
-    
-    private let searchController: UISearchController = {
-       let controller = UISearchController(searchResultsController: SearchResultsViewController())
-        controller.searchBar.placeholder = "Search for a Movie or a TV show"
-        controller.searchBar.searchBarStyle = .minimal
-        return controller
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        //TODO3: How to have large title in each view
         title = "Top Searches"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
+        navigationItem.searchController = searchBarController
+        
         view.addSubview(searchTable)
-        navigationItem.searchController = searchController
+        
         navigationController?.navigationBar.tintColor = .label
     
         searchTable.delegate = self

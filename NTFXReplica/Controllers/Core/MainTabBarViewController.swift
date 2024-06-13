@@ -7,6 +7,7 @@
 
 import UIKit
 
+//TODO2: How to create TabBarController on bottom
 class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class MainTabBarViewController: UITabBarController {
         vc3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         vc4.tabBarItem.image = UIImage(systemName: "arrow.down.to.line")
 
+        //TODO: Just title
         vc1.title = "Home"
         vc2.title = "Coming Soon"
         vc3.title = "Top Search"

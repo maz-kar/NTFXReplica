@@ -11,13 +11,8 @@ class HomeViewController: UIViewController {
     
     let sectionTitles: [String] = ["Trending movies", "Trending Tv", "Popular", "Upcoming movies", "Top rated"]
     
-    private let homeFeedTable: UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
-        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
-        return table
-    }()
-    
     private func configureNavBar() {
+        //TODO6: How to have left & right BarButtonItem in NavigationItem
         var image = UIImage(named: "netflixLogo")
         image = image?.withRenderingMode(.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
@@ -31,18 +26,26 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItems = [rightButtonItemFirst, rightButtonItemSecond]
     }
     
+    private let homeFeedTable: UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        //TODO7: How to have a tableViewCell inside of a tableView
+        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
+        return table
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        configureNavBar()
+        
+        //TODO: How to have a large imageView before scrollView
+        homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
+        
         view.addSubview(homeFeedTable)
         
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        
-        configureNavBar()
-        
-        homeFeedTable.tableHeaderView = HomeHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,12 +53,19 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
+    private let homeFeedTable2: UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return table
+    }()
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitles.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -113,7 +123,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
-            
         default:
             return UITableViewCell()
         }
