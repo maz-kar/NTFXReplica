@@ -11,13 +11,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    //TODO1: How to put our custome VC as the rootVC without Main and Storyboard
+    /*
+     MARK: How to put our custom VC as the rootVC without Main and Storyboard.
+     Before this, we have to delete Storyboard and Main from bundle and info.plist
+     */
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = MainTabBarViewController()
+        window?.rootViewController = MainTabBarVC()
         window?.makeKeyAndVisible()
     }
 
