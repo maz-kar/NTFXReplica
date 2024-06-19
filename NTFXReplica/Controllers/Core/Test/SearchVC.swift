@@ -12,6 +12,9 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        self.title = "Top Searches"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
-
 }

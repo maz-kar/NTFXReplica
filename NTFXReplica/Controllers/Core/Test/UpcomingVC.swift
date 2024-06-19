@@ -12,6 +12,10 @@ class UpcomingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        //MARK: How to add Large Title to our ViewControllers
+        title = "Coming Soon"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
 }
