@@ -13,6 +13,9 @@ class MainTabBarVC: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+        /*
+         MARK: How to add image and title of our VCs as UINavigationController to our TabBar
+         */
         let vc1 = UINavigationController(rootViewController: HomeVC())
         let vc2 = UINavigationController(rootViewController: UpcomingVC())
         let vc3 = UINavigationController(rootViewController: SearchVC())
